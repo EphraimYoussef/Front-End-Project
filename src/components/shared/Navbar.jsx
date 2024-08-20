@@ -14,7 +14,7 @@ const Navbar = ({path}) => {
   const [open, setOpen] = useState(false)
   return (
     <>
-      <div className='px-36 flex justify-between font-semibold h-12 border-b max-md:flex-col max-lg:p-2 max-md:h-20 max-md:items-center'>
+      <div className='px-36 flex justify-between font-semibold border-b max-md:flex-col max-lg:p-2 max-md:items-center'>
         <div className='flex justify-center items-center '>
           <DropDown title={"English"} mainImage={"eng.png"} content={["English","France","United States","Egypt"]}
             withImg={true} img={["eng.png","fn.png","us.png","eg.png"]}/>
@@ -24,7 +24,7 @@ const Navbar = ({path}) => {
             <path d="M326.852 74.206H185.158a42.285 42.285 0 0 0-42.242 42.24v279.112a42.29 42.29 0 0 0 42.242 42.236h141.694a42.282 42.282 0 0 0 42.232-42.236V116.442a42.285 42.285 0 0 0-42.232-42.236zm22.126 321.352a22.162 22.162 0 0 1-22.126 22.13H185.158a22.164 22.164 0 0 1-22.136-22.13v-30.65h185.956v30.65zm0-50.765H163.022v-196.07h185.956v196.07zm0-216.175H163.022v-12.171a22.157 22.157 0 0 1 22.136-22.126h141.694a22.155 22.155 0 0 1 22.126 22.126z"/>
             <path d="M242.314 104.869h27.377v13.41h-27.377zM227.913 380.573h56.175v20.111h-56.175z"/></g>
           </svg>
-          <p>123-456-7890</p>
+          <p className='max-md:text-sm'>123-456-7890</p>
         </div>
         <div className='flex w-80 justify-between items-center '>
           <button className='flex justify-center items-center gap-1 hover:text-rose-500 transition duration-300 hover:bg-gray-50 px-4 py-2'>
@@ -77,7 +77,8 @@ const Navbar = ({path}) => {
           </Link>
         </div>
         
-        {/* // TODO Mobile Navbar Menu */}
+        {/* // * Mobile Navbar Menu */}
+
         <div className='md:hidden flex '>
         <button className='flex w-10 h-10 justify-center items-center hover:text-rose-500 transition hover:bg-gray-50 duration-300'> 
           <IoSearchOutline size={22} />
@@ -99,7 +100,7 @@ const Navbar = ({path}) => {
           </button>
         </div>
       </div>
-      <div className={`flex flex-col w-full border-b-2 justify-start items-start gap-4 p-4
+      <div className={`flex flex-col w-full border-b-2 justify-start items-start gap-4 p-4 md:hidden
         scale-y-0 scale-x-100 origin-top transition-all duration-300 ${open ? "scale-y-100" : "scale-0"}`}>
         <Link href={"/"}>
             <button className={`text-black font-semibold px-4 py-2 text-sm/none hover:bg-gray-50 
