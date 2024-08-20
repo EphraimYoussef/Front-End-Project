@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{user-select: none;}
+
+.HeaderBtn1{
+    position: relative;
+    border-radius: 50px;
+    width: 150px;
+    height: 50px;
+    overflow: hidden;
+    transition: ease-in-out 0.4s;
+    color: #e11d48;
+}
+.HeaderBtn1::before{
+    content: "";
+    position: absolute;
+    background-color: #f43f5e;
+    width:60% ;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: scale(0,1);
+    transform-origin: left;
+    transition: ease-in-out 0.4s;
+    z-index: -1;
+}
+.HeaderBtn1::after{
+    content: "";
+    position: absolute;
+    background-color: #f43f5e;
+    width:60% ;
+    height: 100%;
+    right: 0;
+    top: 0;
+    transform: scale(0,1);
+    transform-origin: right;
+    transition: ease-in-out 0.4s;
+    z-index: -1;
+}
+.HeaderBtn1:hover{
+    color:#fff ;
+}
+.HeaderBtn1:hover::after{
+    transform: scale(1,1);
+}
+.HeaderBtn1:hover::before{
+    transform: scale(1,1);
+}
+
+
+.CardBtn{
+    background-color: #fff;
+    position: relative;
+    border-radius: 50px;
+    width: 175px;
+    height: 47px;
+    overflow: hidden;
+    transition: ease-in-out 0.3s;
+    color: #fff;
+}
+.CardBtn::before{
+    content: "";
+    position: absolute;
+    background-color: #f43f5e;
+    width:60% ;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: scale(1,1);
+    transform-origin: left;
+    transition: ease-in-out 0.4s;
+    z-index: -1;
+}
+.CardBtn::after{
+    content: "";
+    position: absolute;
+    background-color: #f43f5e;
+    width:60% ;
+    height: 100%;
+    right: 0;
+    top: 0;
+    transform: scale(1,1);
+    transform-origin: right;
+    transition: ease-in-out 0.4s;
+    z-index: -1;
+}
+.CardBtn:hover{
+    color: #e11d48;
+}
+.CardBtn:hover::after{
+    transform: scale(0,1);
+}
+.CardBtn:hover::before{
+    transform: scale(0,1);
+}
+
+.HeaderBtn2{
+    position: relative;
+    border-radius: 50px;
+    width: 150px;
+    height: 50px;
+    overflow: hidden;
+    transition: ease-in-out 0.4s;
+    color: #374151;
+}
+.HeaderBtn2::before{
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #374151;
+    border-radius: 50%;
+    transition: ease-in-out 0.4s;
+    left: -50px;
+    z-index: -1;
+}
+.HeaderBtn2:hover::before{
+    transform: translate(100px,0px);
+}
+.HeaderBtn2::after{
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #374151;
+    border-radius: 50%;
+    transition: ease-in-out 0.4s;
+    right: -50px;
+    z-index: -1;
+}
+.HeaderBtn2:hover::after{
+    transform: translate(-100px,0px);
+}
+.HeaderBtn2:hover{
+    background-color: #374151;
+    color: #fff;
+}
+
+.Offers{
+    position: relative;
+}
+.Offers::before{
+    content: "";
+    position: absolute;
+    top: 13px;
+    background-color: rgba(253, 52, 96, 0.2);
+    width: 100%;
+    height: 35%;
+}
+
+
+.LoginBtn{
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    transition: ease-in-out 0.3s;
+    color: #fff;
+    z-index: 1;
+}
+.LoginBtn::before{
+    content: "";
+    position: absolute;
+    background-color: #f43f5e;
+    width:50% ;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: scale(1,1);
+    transform-origin: left;
+    transition: ease-in-out 0.3s;
+    z-index: -1;
+}
+.LoginBtn::after{
+    content: "";
+    position: absolute;
+    background-color: #f43f5e;
+    width:50% ;
+    height: 100%;
+    right: 0;
+    top: 0;
+    transform: scale(1,1);
+    transform-origin: right;
+    transition: ease-in-out 0.3s;
+    z-index: -1;
+}
+.LoginBtn:hover{
+    color: #e11d48;
+}
+.LoginBtn:hover::after{
+    transform: scale(0,1);
+}
+.LoginBtn:hover::before{
+    transform: scale(0,1);
+}
+
+html{
+    scroll-behavior: smooth;
+}
