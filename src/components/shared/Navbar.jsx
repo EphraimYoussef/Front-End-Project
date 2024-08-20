@@ -78,43 +78,44 @@ const Navbar = ({path}) => {
         </div>
         
         {/* // * Mobile Navbar Menu */}
-
         <div className='md:hidden flex '>
-        <button className='flex w-10 h-10 justify-center items-center hover:text-rose-500 transition hover:bg-gray-50 duration-300'> 
-          <IoSearchOutline size={22} />
-        </button>
-        <Link href={"/cart"}>
-          <button className={`flex w-10 h-10 justify-center items-center hover:text-rose-500 transition hover:bg-gray-50 duration-300
-            ${path == '/cart' && "text-rose-500" }`}>
-            <div className='relative '>
-              <BsCart3 size={22} />
-              <div  className='absolute -top-2 left-3 px-[5px] h-4 flex justify-center items-center rounded-full
-              bg-rose-500 text-white text-xs font-semibold'>{amount}</div>
-            </div>
+          <button className='flex w-10 h-10 justify-center items-center hover:text-rose-500 transition hover:bg-gray-50 duration-300'> 
+            <IoSearchOutline size={22} />
           </button>
-        </Link>
+          <Link href={"/cart"}>
+            <button className={`flex w-10 h-10 justify-center items-center hover:text-rose-500 transition hover:bg-gray-50 duration-300
+              ${path == '/cart' && "text-rose-500" }`}>
+              <div className='relative '>
+                <BsCart3 size={22} />
+                <div  className='absolute -top-2 left-3 px-[5px] h-4 flex justify-center items-center rounded-full
+                bg-rose-500 text-white text-xs font-semibold'>{amount}</div>
+              </div>
+            </button>
+          </Link>
           <button onClick={() => setOpen(!open)} className='border rounded-md p-2'>
             {
               open ? <IoClose size={24}/>  : <IoMenu size={24} /> 
             }
           </button>
+          <div className={`flex flex-col w-full border-b-2 justify-start items-start bg-white gap-4 p-4
+            absolute top-16 left-0 z-50 md:hidden
+            scale-y-0 scale-x-100 origin-top transition-all duration-300 ${open ? "scale-y-100" : "scale-0"}`}>
+            <Link href={"/"}>
+                <button className={`text-black font-semibold px-4 py-2 text-sm/none hover:bg-gray-50 
+                hover:text-rose-500 transition duration-300 
+                ${path == '/' && "text-rose-500" }`}
+                onClick={() => setOpen(false)}>HOME</button>
+            </Link>
+            <Link href={"/#products"}>
+              <button className="text-black font-semibold px-4 py-2 text-sm/none hover:bg-gray-50 
+                hover:text-rose-500 transition duration-300" onClick={() => setOpen(false)} >PRODUCTS</button>
+            </Link>
+            <button className="text-black font-semibold px-4 py-2 text-sm/none hover:bg-gray-50 
+            hover:text-rose-500 transition duration-300" onClick={() => setOpen(false)}>ABOUT US</button>          
+            <button className="text-black font-semibold px-4 py-2 text-sm/none hover:bg-gray-50 
+              hover:text-rose-500 transition duration-300" onClickCapture={() => setOpen(false)}>CONTACT US</button>
+          </div>
         </div>
-      </div>
-      <div className={`flex flex-col w-full border-b-2 justify-start items-start gap-4 p-4 md:hidden
-        scale-y-0 scale-x-100 origin-top transition-all duration-300 ${open ? "scale-y-100" : "scale-0"}`}>
-        <Link href={"/"}>
-            <button className={`text-black font-semibold px-4 py-2 text-sm/none hover:bg-gray-50 
-            hover:text-rose-500 transition duration-300 
-            ${path == '/' && "text-rose-500" }`}>HOME</button>
-        </Link>
-        <Link href={"/#products"}>
-          <button className="text-black font-semibold px-4 py-2 text-sm/none hover:bg-gray-50 
-            hover:text-rose-500 transition duration-300" >PRODUCTS</button>
-        </Link>
-        <button className="text-black font-semibold px-4 py-2 text-sm/none hover:bg-gray-50 
-        hover:text-rose-500 transition duration-300" >ABOUT US</button>          
-        <button className="text-black font-semibold px-4 py-2 text-sm/none hover:bg-gray-50 
-          hover:text-rose-500 transition duration-300" >CONTACT US</button>
       </div>
     </>
   )
