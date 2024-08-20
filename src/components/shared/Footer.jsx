@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <>
-      <div className=" con flex  h-36 w-full bg-rose-600 justify-between items-center px-36 max-md:px-10 max-md:py-6 max-md:flex-col max-md:items-start max-lg:px-10">
+      <div className=" con flex  h-36 w-full bg-rose-600 justify-between items-center px-36 max-md:px-10 max-md:py-6 max-md:flex-col max-lg:px-10">
         <p className='text-white text-2xl font-bold flex'> Subscribe Our Newsletter </p>
         <div className='flex shrink'>
             <input type="email" className=" w-96 h-12 ps-8 text-lg outline-none text-black max-lg:w-52" placeholder="Enter Email Address" required />
@@ -11,8 +11,8 @@ const Footer = () => {
         </div>
       </div>
       <footer style={{background:"rgb(33, 36, 38)"}}>
-        <div className="mx-36 max-w-screen-xl space-y-8 py-16 lg:space-y-16  max-md:px-10">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div className="mx-36 max-w-screen-xl space-y-8 py-16 max-lg:mx-5">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 ">
             <div>
               <img className="text-teal-600 dark:text-teal-300" src='logo_light.png'/>
       
@@ -116,7 +116,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4 max-md:gap-12">
               <div>
                 <p className="font-medium text-gray-900 dark:text-white">Useful Links</p>
 
@@ -258,7 +258,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-      
+
           <p className="text-xs text-gray-500 dark:text-gray-400">
             &copy; 2024 All rights reserved by Shopwise .
           </p>
