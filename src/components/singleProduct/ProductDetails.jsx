@@ -17,14 +17,18 @@ const ProductDetails = ({product}) => {
 	const [quantity, setQuantity] = useState(1)
 	const dispatch = useDispatch()
 return (
-	<div className='h-[800px] mx-32 my-16 flex justify-between items-center '>
-		<div className='flex justify-center items-center w-[48%]  border border-slate-300 rounded-md h-[100%]'>
+	<div className='h-[800px] mx-32 my-16 flex justify-between items-center 
+	max-xl:flex-col max-xl:mx-0 max-xl:h-[1600px] max-xl:gap-10'>
+		<div className='flex justify-center items-center w-[48%] border border-slate-300 rounded-md h-[100%] 
+    max-xl:h-1/2 max-xl:w-[90%]'>
 			<img src={product.image} alt="" className='max-w-[75%] max-h-[65%]' />
 		</div>
-		<div className='flex flex-col h-[100%] w-[48%] justify-between items-start gap-4'>
-			<div className='flex flex-col justify-start items-start gap-4'>
+		<div className='flex flex-col h-[100%] w-[48%] justify-between items-start gap-4 
+			max-xl:w-full max-lg:px-5 max-xl:px-20 '>
+			<div className='flex flex-col justify-start items-start gap-6'>
 				<p className='font-semibold text-2xl'>{product.title}</p>
-				<div className='flex justify-between items-center w-full'>
+				<div className='flex justify-between items-center w-full 
+        max-md:flex-col max-md:items-start'>
 					<div className='flex justify-start items-center gap-3'>
 						<p className='text-rose-500 font-bold text-2xl'>${ (product.price).toFixed(2) }</p>
 						<p className='text-slate-500 font-normal text-base line-through'> ${ (product.price * 1.25).toFixed(2) } </p>
@@ -55,7 +59,7 @@ return (
 			<hr className='w-full border border-slate-300' />
 			<SizeSelect/>
 			<hr className='w-full border border-slate-300' />
-			<div className='flex justify-center items-center gap-5'>
+			<div className='flex justify-center items-center gap-5 max-md:flex-col max-md:w-full'>
 				{/* ======================================================================================================================= */}
 				<div className='flex justify-between items-center gap-2'>
 					<button className={`bg-gray-100 border border-slate-300 w-8 h-8 rounded-full
@@ -78,12 +82,14 @@ return (
 					>
 					<IoCartOutline size={"20"}/> Add To Cart 
 				</button >
-				<button className='hover:text-rose-500 duration-300'>
-					<IoIosShuffle size={25}/>
-				</button>
-				<button className='hover:text-rose-500 duration-300'>
-					<IoMdHeartEmpty size={25}/>
-				</button>
+				<div className='flex justify-center items-center gap-2'>
+          <button className='hover:text-rose-500 duration-300'>
+            <IoIosShuffle size={25}/>
+          </button>
+          <button className='hover:text-rose-500 duration-300'>
+            <IoMdHeartEmpty size={25}/>
+          </button>
+        </div>
 			</div>
 		</div>
 	</div>

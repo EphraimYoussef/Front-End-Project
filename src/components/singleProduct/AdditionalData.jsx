@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 const AdditionalData = ({data}) => {
 	const [option, setOption] = useState(1)
   return (
-    <div className=' flex w-full justify-start items-start flex-col px-28 my-16'>
+    <div className=' flex w-full justify-start items-start flex-col px-28 my-16 max-lg:px-5'>
       <div className='relative flex justify-start items-center w-full'>
         <button className={`uppercase font-semibold hover:text-rose-500 transition duration-300 hover:bg-gray-50 px-4 py-2 border-b-[3px] 
         ${option === 1 && "text-rose-500"}`}
@@ -22,20 +22,20 @@ const AdditionalData = ({data}) => {
         <div
           className={`absolute h-0.5 bottom-0 bg-red-500 transition-all duration-300`}
           style={
-            option === 1 ? {left: '0%',width: '10.2%'} 
+            option === 1 ? {left: '0%',width: '133px'} 
             : 
-            {left: '10.2%',width: '13.2%'}
+            {left: '133px',width: '167px'}
           }>
         </div>
       </div>
       
       {
         option == 1 ? 
-        <div className='text-slate-500 font-normal my-4 text-xl leading-10'>
+        <div className='text-slate-500 font-normal my-4 text-xl leading-10 max-md:text-base'>
           {data}
         </div> 
         : 
-        <div className='text-slate-600  font-normal my-8 text-lg w-full'>
+        <div className='text-slate-600  font-normal my-8 text-lg w-full max-md:text-base'>
           <table className="table-auto border border-slate-300 w-full ">
             <tbody  >
               <tr className='border  border-slate-300 p-3'>
