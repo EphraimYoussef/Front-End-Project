@@ -73,7 +73,7 @@ const LoginForm = () => {
 
   return (
     <div className='flex justify-center items-center w-full h-full my-28'>
-      <div className='flex flex-col justify-center items-left w-[570px] h-[550px] border gap-4 px-5 py-10'
+      <div className='flex flex-col justify-center items-left w-[570px] h-[550px] border gap-4 px-5 py-10 max-md:w-[350px]'
         style={{
         boxShadow: "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px"
         }}>
@@ -88,7 +88,8 @@ const LoginForm = () => {
               }
             })} 
               type="text" placeholder="Username" className="border w-[490px] mx-5 h-12 px-4 outline-none rounded-md 
-              placeholder:text-md placeholder:text-slate-500 focus:border-sky-500 transition duration-300" />
+              placeholder:text-md placeholder:text-slate-500 focus:border-sky-500 transition duration-300
+              max-md:w-[300px]" />
               <p className="text-red-600 text-sm h-3 px-7">{errors.username && errors.username.message}</p>
           </div>
           <div className='flex justify-between items-start flex-col gap-1'>
@@ -99,10 +100,11 @@ const LoginForm = () => {
                 message: "Password must be at least 6 characters."
               }
             })} type="password" placeholder="Password" className="border w-[490px] mx-5 h-12 px-4 outline-none rounded-md 
-              placeholder:text-md placeholder:text-slate-500 focus:border-sky-500 transition duration-300"  />
+              placeholder:text-md placeholder:text-slate-500 focus:border-sky-500 transition duration-300
+              max-md:w-[300px]"  />
               <p className="text-red-600 text-sm h-3 px-7 ">{errors.password && errors.password.message}</p>
           </div>
-          <div className='flex justify-between items-center w-[490px]'>
+          <div className='flex justify-between items-center w-[490px] max-md:w-[300px]'>
             <label className="flex cursor-pointer items-start gap-4">
               <div className="flex items-center">
                 &#8203;
@@ -115,7 +117,8 @@ const LoginForm = () => {
             <button type="button" className='text-slate-600 hover:text-rose-500 duration-300'>Forgot Password?</button>
           </div>
           <button type='submit' disabled={isSubmitting} className={`w-[490px] h-12 border border-rose-500 
-          rounded-md text-rose-500 text-lg duration-300 ${!isSubmitting && "LoginBtn"} ${isSubmitting && "opacity-50"}`}>
+          rounded-md text-rose-500 text-lg duration-300 ${!isSubmitting && "LoginBtn"} ${isSubmitting && "opacity-50"}
+          max-md:w-[300px]`}>
             {isSubmitting ? "Logging In..." : "Log In"}</button>
           <ToastContainer />
         </form>
