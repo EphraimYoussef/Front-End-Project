@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <>
-      <div className=" con flex  h-36 w-full bg-rose-600 justify-between items-center px-36 max-md:px-10 max-md:py-6 max-md:flex-col max-lg:px-10">
+      <div className="flex  h-36 w-full bg-rose-600 justify-between items-center px-36 max-md:px-10 max-md:py-6 max-md:flex-col max-lg:px-10">
         <p className='text-white text-2xl font-bold flex'> Subscribe Our Newsletter </p>
         <div className='flex shrink'>
             <input type="email" className=" w-96 h-12 ps-8 text-lg outline-none text-black max-lg:w-52" placeholder="Enter Email Address" required />

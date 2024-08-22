@@ -14,7 +14,7 @@ export default function FurnitureSwiper() {
           delay: 3000,
         }}
         modules={[Autoplay]}
-        className="h-60 relative mb-24"
+        className="h-60 relative mb-24 max-xl:hidden"
       >
         <SwiperSlide className='overflow-hidden'>
           <img src="furniture_insta1.jpg" alt="furniture_insta1" className='w-full h-full hover:scale-110 hover:brightness-50 duration-300'/> 

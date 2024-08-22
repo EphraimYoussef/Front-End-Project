@@ -25,7 +25,7 @@ export default function HeaderSwiper() {
         speed={700}
         loop={true}
         modules={[Pagination,Autoplay,EffectFade]}
-        className="mySwiper h-[650px]"
+        className="mySwiper h-[650px] max-xl:hidden"
       >
         <SwiperSlide className=' w-full bg-teal-100' >
           <div className='p-36 flex justify-between items-center h-full'>

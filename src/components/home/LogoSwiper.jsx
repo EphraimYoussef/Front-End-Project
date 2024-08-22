@@ -14,7 +14,7 @@ export default function LogoSwiper() {
           delay: 3000,
         }}
         modules={[Autoplay]}
-        className='w-[1200px]'
+        className='w-[1200px] max-xl:hidden'
       >
         <SwiperSlide>
           <div className='flex justify-center items-center'>

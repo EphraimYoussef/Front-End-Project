@@ -2,9 +2,9 @@ import React from 'react'
 
 const Features = () => {
   return (
-    <div className='w-full flex justify-center items-center px-36 pt-20 '>
-      <div className='flex w-[1250px]'>
-        <div className='border border-slate-300 h-28 w-1/4 flex justify-center items-center gap-5'>
+    <div className='w-full flex justify-center items-center px-36 pt-20 max-lg:px-5'>
+      <div className='grid gap-0 w-full grid-cols-4 max-xl:grid-cols-2 max-md:grid-cols-1'>
+        <div className='border border-slate-300 h-28 flex justify-center items-center gap-5'>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 88" className='h-14 w-14' >
             <g data-name="Truck Delivery">
               <path d="M73 64a3 3 0 1 0 3 3 3.003 3.003 0 0 0-3-3zm0 4a1 1 0 1 1 1-1 1 1 0 0 1-1 1zM30 64a3 3 0 1 0 3 3 3.003 3.003 0 0 0-3-3zm0 4a1 1 0 1 1 1-1 1 1 0 0 1-1 1zM62 61a1 1 0 0 0 1-1V34h10.508L83 46.34V60a1 1 0 0 0 2 0V46a1.003 1.003 0 0 0-.207-.61l-10-13A1.001 1.001 0 0 0 74 32H62a1 1 0 0 0-1 1v27a1 1 0 0 0 1 1z" style={{fill:"#e11d48"}}/>
@@ -18,7 +18,7 @@ const Features = () => {
             <p className='text-slate-600'>Worldwide</p>
           </div>
         </div>
-        <div className='border border-slate-300 h-28 w-1/4 flex justify-center items-center gap-5'>
+        <div className='border border-slate-300 h-28 flex justify-center items-center gap-5'>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 88" className='h-12'>
             <g data-name="hand euro">
               <path d="M84.322 69.363a5.072 5.072 0 0 0-5.944-2.34l-17.773 5.521A5.491 5.491 0 0 0 55.503 65H37.472l-.674-.809a14.43 14.43 0 0 0-20.098-2.03L15.652 63H4a1 1 0 0 0-1 1v22a1 1 0 0 0 1 1h48.579a12.94 12.94 0 0 0 4.693-.877l24.462-9.469a5.104 5.104 0 0 0 2.588-7.29zM5 65h10v20H5zm76.012 9.79L56.55 84.257a10.957 10.957 0 0 1-3.97.742H17V64.484l.95-.76a12.43 12.43 0 0 1 17.313 1.748l.973 1.168a.998.998 0 0 0 .768.36h18.5a3.5 3.5 0 0 1 0 7H37a1 1 0 0 0 0 2h18.503a5.464 5.464 0 0 0 2.184-.455l21.285-6.613a3.103 3.103 0 0 1 2.04 5.857z" style={{fill:"#e11d48"}}/>
@@ -32,7 +32,7 @@ const Features = () => {
             <p className='text-slate-600'>30 Days money return</p>
           </div>
         </div>
-        <div className='border border-slate-300 h-28 w-1/4 flex justify-center items-center gap-7'>
+        <div className='border border-slate-300 h-28 flex justify-center items-center gap-7'>
         <svg xmlns="http://www.w3.org/2000/svg" className='h-12 w-12'>
           <g style={{fill:"#e11d48"}}>
             <path d="M17.217 27.153a5.576 5.576 0 1 0-5.576-5.576.728.728 0 0 0 1.455 0 4.121 4.121 0 1 1 4.121 4.123 5.582 5.582 0 0 0-5.576 5.576.729.729 0 0 0 .728.727h9.7a.728.728 0 0 0 0-1.456h-8.9a4.127 4.127 0 0 1 4.048-3.394zM35.631 18.424a.728.728 0 0 0-.728.729v5.332H28.02v-7.758a.728.728 0 0 0-1.455 0v8.486a.728.728 0 0 0 .727.727H34.9v5.334a.728.728 0 0 0 1.455 0V19.153a.728.728 0 0 0-.724-.729z"/>
@@ -44,7 +44,7 @@ const Features = () => {
             <p className='text-slate-600'>Customer Support</p>
           </div>
         </div>
-        <div className='border border-slate-300 h-28 w-1/4 flex justify-center items-center gap-5'>
+        <div className='border border-slate-300 h-28 flex justify-center items-center gap-5'>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" className='h-12 w-12'>
           <g data-name="File Credit Card">
             <path d="m53.707 9.293-8-8A1.12 1.12 0 0 0 45 1H11a1 1 0 0 0-1 1v16a1 1 0 0 0 2 0V3h32v7a1 1 0 0 0 1 1h7v50H21V23h10a3 3 0 0 1 3 3v32a1 1 0 0 0 2 0V26a5.006 5.006 0 0 0-5-5H15a5.006 5.006 0 0 0-5 5v32a5.006 5.006 0 0 0 5 5h38a1 1 0 0 0 1-1V10a1.09 1.09 0 0 0-.293-.707zM46 9V4.414L50.586 9zM12 58V26a3 3 0 0 1 2-2.816v37.632A3 3 0 0 1 12 58zm4 3V23h3v38z" style={{fill:"#e11d48"}}/>
