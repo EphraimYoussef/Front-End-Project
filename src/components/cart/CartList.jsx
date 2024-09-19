@@ -5,63 +5,65 @@ import { useSelector } from 'react-redux'
 import { TiDeleteOutline } from "react-icons/ti";
 import { useDispatch } from 'react-redux';
 import { clearCart, removeItem } from '@/redux/Cart/cartSlice';
-const CartList = () => {
+import { Trash2 } from "lucide-react"
+import { Button } from "@/components/ui/button"
+
+export default function CartList() {
   const { cartItems , amount , total} = useSelector((state) => state.cart)
   const dispatch = useDispatch()
-  return (
-    amount === 0 ? // ? Cart is empty
-      <div className='flex justify-center items-center h-[550px] flex-col gap-10'>
-        <p className='font-bold text-5xl uppercase text-slate-600'> there is no items </p> 
-        <p className='text-2xl text-slate-600 font-semibold'>
-          Please, Go back to 
-          <Link href={"/"}>
-            <span className='text-slate-600 underline p-2'>Home</span> 
+
+  if (amount === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+        <h1 className="text-2xl font-bold mb-4">Your cart is empty</h1>
+        <div className="space-x-4">
+          <Link href="/">
+            <Button variant="default" className="bg-rose-500 hover:bg-rose-600">Go Home</Button>
           </Link>
-          and Add some items. </p>
+          <Link href="/#products">
+            <Button variant="outline" className="border-rose-600 text-rose-600 duration-300 hover:bg-slate-100 hover:text-rose-600">Add Products</Button>
+          </Link>
+        </div>
       </div>
-    : 
-    <div className='flex justify-center items-center flex-col gap-10 min-h-[550px] my-20'>
-      <table className='w-[80%]'>
-        <thead className='text-slate-600'>
-          <tr className='text-slate-600 border-b border-slate-300 text-lg'>
-            <th className='p-5'>Product</th>
-            <th className='p-5'>Price</th>
-            <th className='p-5'>Quantity</th>
-            <th className='p-5'>Total</th>
-            <th className='p-5'>Remove</th>
-          </tr>
-        </thead>
-        <tbody className='text-slate-600'>
-          {
-            cartItems.map((item) => {
-              return(
-                <tr className='border-b border-slate-300 font-semibold h-[150px]'>
-                  <td className='p-5'>
-                    <div className="flex justify-start items-center gap-5">
-                      <img src={item.image} className="w-20 rounded border p-2" alt="" />
-                      <p>{item.title}.</p>
-                    </div>
-                  </td>
-                  <td className='p-5  text-center '>${(item.price).toFixed(2)}</td>
-                  <td className='p-5  text-center '>{item.quantity}</td>
-                  <td className='p-5  text-center '>${(item.price * item.quantity).toFixed(2)}</td>
-                  <td className='p-5  text-center '>
-                    <button className='hover:text-rose-600 duration-300'
-                    onClick={() => dispatch(removeItem(item.id))}><TiDeleteOutline size={30} /></button>
-                  </td>
-                </tr>
-              )
-            })
-          }
-        </tbody>
-      </table>
-      <div className='w-[80%] flex justify-between items-center gap-5'>
-        <p className='text-slate-600 font-bold text-xl'>Total Price : ${total.toFixed(2)}</p>
-        <button className='border border-rose-600 text-white p-3 rounded HeaderBtn1 uppercase'
-        onClick={() => dispatch(clearCart())} >Clear Cart</button>
+    )
+  }
+
+  return (
+    <div className="container mx-auto py-8 px-24 max-md:px-4">
+      <h1 className="text-2xl font-bold mb-8">Your Cart</h1>
+      <div className="space-y-8">
+        {
+        cartItems.map((product) => (
+          <div key={product.id} className="flex flex-col sm:flex-row items-center bg-white p-4 rounded-lg shadow-md border">
+            <img
+              src={product.image}
+              alt={product.title}
+              width={100}
+              height={100}
+              className="rounded-md mb-4 sm:mb-0 sm:mr-6"
+            />
+            <div className="flex-grow space-y-2">
+              <h2 className="text-lg font-semibold">{product.title}</h2>
+              <p className="text-gray-600">Quantity: {product.quantity}</p>
+              <p className="text-gray-600">Price: ${product.price.toFixed(2)}</p>
+              <p className="font-semibold">Total: ${(product.price * product.quantity).toFixed(2)}</p>
+            </div>
+            <Button
+              variant="destructive"
+              size="icon"
+              className="mt-4 sm:mt-0"
+              onClick={() => dispatch(removeItem(product.id))}
+            >
+              <Trash2 className="h-4 w-4" />
+              <span className="sr-only">Remove product</span>
+            </Button>
+          </div>
+        ))}
+      </div>
+      <div className="mt-8 flex flex-col sm:flex-row justify-between items-center">
+        <p className="text-xl font-bold mb-4 sm:mb-0">Total: ${total.toFixed(2)}</p>
+        <Button variant="destructive" onClick={() => dispatch(clearCart())}>Clear Cart</Button>
       </div>
     </div>
   )
 }
-
-export default CartList
