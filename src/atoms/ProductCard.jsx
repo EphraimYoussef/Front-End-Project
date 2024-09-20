@@ -25,9 +25,9 @@ const ProductCard = ( {item} ) => {
         </div>
         <div className={` ${ check ? " opacity-100" : "opacity-0" } flex justify-center gap-3 items-center
           bg-[rgba(0,0,0,0.2)] h-full w-full absolute top-0 ease-in-out duration-300 ` }>
-          <CardOption check={check} option={1} > <IoIosShuffle size = {"18"} /> </CardOption>
-          <CardOption check={check} option={2} > <AiOutlineZoomIn size = {"18"} /> </CardOption>
-          <CardOption check={check} option={3} > <IoMdHeartEmpty size = {"18"} /> </CardOption>
+          <CardOption check={check} option={1} title={"Add to cart"}> <IoIosShuffle size = {"18"} /> </CardOption>
+          <CardOption check={check} option={2} title={"Zoom in"}> <AiOutlineZoomIn size = {"18"} /> </CardOption>
+          <CardOption check={check} option={3} title={"Add to wishlist"}> <IoMdHeartEmpty size = {"18"} /> </CardOption>
         </div>
       </div>
       <div className='flex flex-col justify-center items-center m-3' >
@@ -47,7 +47,8 @@ const ProductCard = ( {item} ) => {
         <button className={`CardBtn ${check ? " -translate-y-12 " : " translate-y-5 "} 
           border border-rose-500  ease-in-out duration-300 
           flex justify-center items-center gap-2`}
-          onClick={()=>{dispatch(addItem({product : item, quantity : 1}))}}>
+          onClick={()=>{dispatch(addItem({product : item, quantity : 1}))}}
+          title='Add to cart'>
           <IoCartOutline size={"20"} /> Add To Cart
         </button>
       </div>

@@ -9,7 +9,8 @@ const CardOption = ( { children , check , option } ) => {
         ${ option == 1 && "duration-300 " }
         ${ option == 2 && "duration-300 delay-75" }
         ${ option == 3 && "duration-300 delay-150" }
-        `}>
+        `}
+        title = {option == 1 ? "compare" : option == 2 ? "Zoom in" : "Add to wishlist"} >
         {children}
       </button>
     </div>
