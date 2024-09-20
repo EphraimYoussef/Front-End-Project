@@ -27,15 +27,17 @@ const Navbar = ({path}) => {
           <p className='max-md:text-sm'>123-456-7890</p>
         </div>
         <div className='flex w-80 justify-between items-center '>
-          <button className='flex justify-center items-center gap-1 hover:text-rose-500 transition duration-300 hover:bg-gray-50 px-4 py-2'>
+          <button className='flex justify-center items-center gap-1 hover:text-rose-500 transition duration-300 hover:bg-gray-50 px-4 py-2'
+            title='Compare'>
             <IoIosShuffle size={20}/>
             Compare
           </button>
-          <button className='flex justify-center items-center gap-1 hover:text-rose-500 transition duration-300 hover:bg-gray-50 px-4 py-2'>
+          <button className='flex justify-center items-center gap-1 hover:text-rose-500 transition duration-300 hover:bg-gray-50 px-4 py-2'
+            title='Wishlist'>
             <IoMdHeartEmpty size={20}/>
             Wishlist
           </button>
-          <Link href={"/login"}>
+          <Link href={"/login"} title='Login'>
             <button className={`flex justify-center items-center gap-2 hover:text-rose-500 transition duration-300 px-4 py-2
             ${path == '/login' && "text-rose-500" } hover:bg-gray-50 `}>
               <SlLogin size={16} />
@@ -45,29 +47,31 @@ const Navbar = ({path}) => {
         </div>
       </div>
       <div className='px-36 flex justify-between items-center font-semibold h-[67px] border-b sticky top-0 z-40 bg-white shadow-md max-lg:p-2'>
-        <Link href={"/"}>
+        <Link href={"/"} title='Shopwise'>
           <img src="logo.png" alt="logo" className='h-11' />
         </Link>
         <div className='flex justify-between items-center max-md:hidden'>
-          <Link href={"/"}>
+          <Link href={"/"} title='Home'>
             <button className={`text-black font-semibold px-4 py-2 text-sm/none hover:bg-gray-50 
             hover:text-rose-500 transition duration-300 
             ${path == '/' && "text-rose-500" }`}>HOME</button>
           </Link>
-          <Link href={"/#products"}>
+          <Link href={"/#products"} title='Products'>
             <button className="text-black font-semibold px-4 py-2 text-sm/none hover:bg-gray-50 
               hover:text-rose-500 transition duration-300" >PRODUCTS</button>
           </Link>
           <button className="text-black font-semibold px-4 py-2 text-sm/none hover:bg-gray-50 
-          hover:text-rose-500 transition duration-300" >ABOUT US</button>          
+          hover:text-rose-500 transition duration-300" title='About Us' >ABOUT US</button>          
           <button className="text-black font-semibold px-4 py-2 text-sm/none hover:bg-gray-50 
-            hover:text-rose-500 transition duration-300" >CONTACT US</button>
-          <button className='flex w-10 h-10 justify-center items-center hover:text-rose-500 transition hover:bg-gray-50 duration-300'> 
+            hover:text-rose-500 transition duration-300" title='Contact Us' >CONTACT US</button>
+          <button className='flex w-10 h-10 justify-center items-center hover:text-rose-500 transition hover:bg-gray-50 duration-300'
+            title='Search'> 
             <IoSearchOutline size={22} />
           </button>
           <Link href={"/cart"}>
             <button className={`flex w-10 h-10 justify-center items-center hover:text-rose-500 transition hover:bg-gray-50 duration-300
-              ${path == '/cart' && "text-rose-500" }`}>
+              ${path == '/cart' && "text-rose-500" }`}
+              title='Cart'>
               <div className='relative '>
                 <BsCart3 size={22} />
                 <div  className='absolute -top-2 left-3 px-[5px] h-4 flex justify-center items-center rounded-full
