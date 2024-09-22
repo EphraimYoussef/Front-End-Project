@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/navigation';
 import { useDispatch } from 'react-redux';
 import { clearCart } from '@/redux/Cart/cartSlice';
+import { Oval } from 'react-loader-spinner';
 
 const LoginForm = () => {
   function notifySuccess() {
@@ -117,9 +118,26 @@ const LoginForm = () => {
             <button type="button" className='text-slate-600 hover:text-rose-500 duration-300'>Forgot Password?</button>
           </div>
           <button type='submit' disabled={isSubmitting} className={`w-[490px] h-12 border border-rose-500 
-          rounded-md text-rose-500 text-lg duration-300 ${!isSubmitting && "LoginBtn"} ${isSubmitting && "opacity-50"}
-          max-md:w-[300px]`}>
-            {isSubmitting ? "Logging In..." : "Log In"}</button>
+            rounded-md text-rose-500 text-lg duration-300 ${!isSubmitting && "LoginBtn"} ${isSubmitting && "opacity-50"}
+            max-md:w-[300px]`}>
+              {
+                isSubmitting ?
+                <div className='flex justify-center items-center gap-5 w-full h-full'>
+                  <Oval
+                    visible={true}
+                    height="20"
+                    width="20"
+                    color="#e11d48"
+                    secondaryColor='#f43f5e'
+                    ariaLabel="oval-loading"
+                    strokeWidth={5}
+                    />
+                    <p>Logging In ...</p>
+                </div>
+                :
+                "Log In"
+              }
+          </button>
           <ToastContainer />
         </form>
         <div className="flex items-center justify-center w-full">
