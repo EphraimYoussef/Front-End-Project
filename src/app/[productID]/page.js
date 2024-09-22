@@ -8,10 +8,13 @@ const roboto = Roboto({
     weight: ['300', '400', '500', '700'],
 })
 
-export const metadata = {
-  title: "Shopwise - Products",
-};
-
+export async function generateMetadata({ params }) {
+  const product = await getSingleProductData(params.productID)
+  return {
+    title: `Shopwise - ${product.title}`,
+    description: `Shopwise - ${product.description}`,
+  }
+}
 
 const page = async ( props ) => {
 	const { productID } = props.params
