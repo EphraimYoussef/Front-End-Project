@@ -68,7 +68,7 @@ return (
 					onClick={() => { quantity>1 && setQuantity(quantity-1) }}>
 					<FaMinus size={12} /></button>
 					<input type="text" className='w-12 h-8 text-center border rounded border-slate-300 outline-none' value={quantity}
-					onChange={(e) => setQuantity(e.target.value)} />
+					onChange={(e) => setQuantity(parseInt(e.target.value))} />
 					<button className={`bg-gray-100 border border-slate-300 w-8 h-8 rounded-full
 					font-medium duration-300 flex justify-center items-center hover:bg-slate-300`}
 					onClick={() => setQuantity(parseInt(quantity)+1)}>
